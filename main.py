@@ -110,11 +110,7 @@ def check():
         result = Image.new("RGBA", (
             round(math.sqrt(len(files)) + 0.45) * 305 - 5, round(math.sqrt(len(files))) * 550 - 5))
         if SETTINGS.backgroundurl != "":
-            result.paste(Image.open(io.BytesIO(http.urlopen("GET", SETTINGS.backgroundurl).data)).resize(
-                (
-                    int(round(math.sqrt(len(files)) + 0.45) * 305 - 5),
-                    int(round(math.sqrt(len(files)) + 0.45) * 550 - 5)),
-                Image.ANTIALIAS))
+            result.paste(Image.open(io.BytesIO(http.urlopen("GET", SETTINGS.backgroundurl).data)).resize((int(round(math.sqrt(len(files)) + 0.45) * 305 - 5),int(round(math.sqrt(len(files)) + 0.45) * 550 - 5)),Image.ANTIALIAS))
         x = -305
         y = 0
         count = 0
