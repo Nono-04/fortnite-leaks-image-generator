@@ -22,6 +22,8 @@ def GetBlendColor(Rarity):
         return 231, 196, 19
     elif Rarity.lower() == "marvel":
         return 197, 51, 52
+    elif Rarity.lower() == "mythic":
+        return 255, 253, 112
     elif Rarity.lower() == "dc":
         return 84, 117, 199
     elif Rarity.lower() == "icon":
