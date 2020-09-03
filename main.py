@@ -106,8 +106,8 @@ def check():
                 for i in new["data"]["items"]:
                     if SETTINGS.typeconfig[i['type']['value']] is True:
                         img = module.GenerateCard(i)
-                        files.append(img)
                         img.save(f"output/{i['name']}.png", optimized=True)
+                        files.append(f"output/{i['name']}")
         except:
             print("ERROR WITH DOWNLOADING FILES.\n"
                   "THERE WAS ADDED A NEW ITEM TYPE VALUE."
