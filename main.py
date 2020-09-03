@@ -98,7 +98,16 @@ def check():
               f"\n----------------------------\n"
               f"\nDownloading now the Images")
         try:
-            files = [module.GenerateCard(i) for i in new["data"]["items"] if SETTINGS.typeconfig[i["type"]["value"]] is True]
+            if SETTINGS.downloadcards is False:
+                files = [module.GenerateCard(i) for i in new["data"]["items"] if
+                         SETTINGS.typeconfig[i["type"]["value"]] is True]
+            else:
+                files = []
+                for i in new["data"]["items"]:
+                    if SETTINGS.typeconfig[i['type']['value']] is True:
+                        img = module.GenerateCard(i)
+                        files.append(img)
+                        img.save(f"output/{i['name']}.png", optimized=True)
         except:
             print("ERROR WITH DOWNLOADING FILES.\n"
                   "THERE WAS ADDED A NEW ITEM TYPE VALUE."

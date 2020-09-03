@@ -5,6 +5,8 @@ lang = "en"  # <- language code
 displayset = True # <- Display the Set of the Item
 raritytext = False  # <- Display the Rarity of the Item
 
+downloadcards = False # False = FASTER, True = SLOWER but download every single image
+
 typeconfig = {
     "outfit": True,
     "banner": True,

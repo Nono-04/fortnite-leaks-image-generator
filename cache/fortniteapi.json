@@ -822,7 +822,9 @@
             "definitionPath": null,
             "path": "FortniteGame/Content/Athena/Items/Cosmetics/Backpacks/BID_601_Venus",
             "added": "2020-08-27T06:07:50Z",
-            "shopHistory": null
+            "shopHistory": [
+               "2020-09-03T00:00:00Z"
+            ]
          },
          {
             "id": "BID_602_DarkNinjaPurple_Female",
@@ -5737,12 +5739,14 @@
                "Cosmetics.UserFacingFlags.Wrap.Animated",
                "Cosmetics.Source.ItemShop"
             ],
-            "showcaseVideo": "OUShk3sTTg0",
+            "showcaseVideo": "mhOMspdeHqI",
             "displayAssetPath": "FortniteGame/Content/Catalog/DisplayAssets/DA_Featured_Wrap_278_TropicalFish",
             "definitionPath": null,
             "path": "FortniteGame/Content/Athena/Items/Cosmetics/ItemWraps/Wrap_278_TropicalFish",
             "added": "2020-08-27T06:07:50Z",
-            "shopHistory": null
+            "shopHistory": [
+               "2020-09-03T00:00:00Z"
+            ]
          }
       ]
    }
