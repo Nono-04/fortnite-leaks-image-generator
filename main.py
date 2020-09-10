@@ -3,6 +3,7 @@ import json
 import math
 import sys
 import time
+import traceback
 
 import urllib3
 from PIL import Image
@@ -44,7 +45,7 @@ def get_response():
                     },
                     "rarity": {
                         "value": cosmetic["backendRarity"].split("::")[1],
-                        "displayValue": cosmetic["rarity"],
+                        "displayValue": str(cosmetic["backendRarity"]).replace("Athena", "").lower(),
                         "backendValue": cosmetic["backendRarity"]
                     },
                     "images": {
@@ -100,15 +101,16 @@ def check():
         try:
             if SETTINGS.downloadcards is False:
                 files = [module.GenerateCard(i) for i in new["data"]["items"] if
-                         SETTINGS.typeconfig[i["type"]["value"]] is True]
+                         SETTINGS.typeconfig[i["type"]["backendValue"]] is True]
             else:
                 files = []
                 for i in new["data"]["items"]:
-                    if SETTINGS.typeconfig[i['type']['value']] is True:
+                    if SETTINGS.typeconfig[i['type']['backendValue']] is True:
                         img = module.GenerateCard(i)
                         img.save(f"output/{i['name']}.png", optimized=True)
                         files.append(f"output/{i['name']}")
         except:
+            traceback.print_exc()
             print("ERROR WITH DOWNLOADING FILES.\n"
                   "THERE WAS ADDED A NEW ITEM TYPE VALUE."
                   "\nMAKE NOW A NEW IMAGE WITH ALL TYPES")

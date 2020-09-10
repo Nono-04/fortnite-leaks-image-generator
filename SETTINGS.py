@@ -8,21 +8,21 @@ raritytext = False  # <- Display the Rarity of the Item
 downloadcards = False # False = FASTER, True = SLOWER but download every single image
 
 typeconfig = {
-    "outfit": True,
-    "banner": True,
-    "backpack": True,
-    "petcarrier": True,
-    "pet": True,
-    "pickaxe": True,
-    "contrail": True,
-    "glider": True,
-    "emote": True,
-    "emoji": True,
-    "loadingscreen": True,
-    "music": True,
-    "spray": True,
-    "toy": True,
-    "wrap": True,
+        "BannerToken": True,
+        "AthenaBackpack": True,
+        "AthenaPetCarrier": True,
+        "AthenaPet": True,
+        "AthenaPickaxe": True,
+        "AthenaCharacter": True,
+        "AthenaSkyDiveContrail": True,
+        "AthenaGlider": True,
+        "AthenaDance": True,
+        "AthenaEmoji": True,
+        "AthenaLoadingScreen": True,
+        "AthenaMusicPack": True,
+        "AthenaSpray": True,
+        "AthenaToy": True,
+        "AthenaItemWrap": True
 }
 
 interval = 7 # <- Time (in seconds) until the bot checks for leaks again | Recommend: 7
