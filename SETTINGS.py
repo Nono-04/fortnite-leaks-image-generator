@@ -22,6 +22,7 @@ typeconfig = {
         "AthenaMusicPack": True,
         "AthenaSpray": True,
         "AthenaToy": True,
+        "AthenaBattleBus": True,
         "AthenaItemWrap": True
 }
 
