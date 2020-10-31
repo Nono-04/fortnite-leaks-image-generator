@@ -26,7 +26,7 @@ typeconfig = {
         "AthenaItemWrap": True
 }
 
-interval = 7 # <- Time (in seconds) until the bot checks for leaks again | Recommend: 7
+interval = 5 # <- Time (in seconds) until the bot checks for leaks again | Recommend: 7
 
 watermark = ""  # <- Leave it empty if you dont want one
 watermarksize = 25 # <- Size of the Watermark

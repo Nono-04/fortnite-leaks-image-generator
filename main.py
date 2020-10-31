@@ -25,9 +25,15 @@ def get_response():
     benbot_new = json.loads(
         http.request("get", f'https://benbotfn.tk/api/v1/newCosmetics?lang={lang}').data.decode('utf-8'))
     if benbot_cache != benbot_new:
-        print("BenBot was updated")
         with open('cache/benbot.json', 'w') as file:
             json.dump(benbot_new, file, indent=3)
+        print("BenBot was updated")
+        if "error" in benbot_new:
+            print(f"BenBot Error: " + benbot_new['error'])
+            return
+        if not benbot_new['items']:
+            print("BenBot Error: Items Null")
+            return
         globaldata = {
             "status": 200,
             "data": {
@@ -68,6 +74,8 @@ def get_response():
 
     if fnapi_cache != fnapi_new:
         print("Fortnite-API.com was updated")
+        with open('cache/fortniteapi.json', 'w') as file:
+            json.dump(fnapi_new, file, indent=3)
         globaldata = {
             "status": 200,
             "data": {
@@ -75,6 +83,9 @@ def get_response():
                 ]
             }
         }
+        if "error" in fnapi_new:
+            print("Fortnite API Error: " + fnapi_new['error'])
+            return
         for cosmetic in fnapi_new["data"]["items"]:
             cosmetic["rarity"] = {
                 "value": cosmetic["rarity"]["value"],
@@ -83,8 +94,6 @@ def get_response():
             }
             globaldata["data"]["items"].append(cosmetic)
 
-        with open('cache/fortniteapi.json', 'w') as file:
-            json.dump(fnapi_new, file, indent=3)
         return fnapi_new
 
     return None
