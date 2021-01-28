@@ -92,7 +92,7 @@ def GenerateCard(Item):
         ratio = max(230 / Icon.width, 310 / Icon.height)
     else:
         ratio = max(310 / Icon.width, 390 / Icon.height)
-    Icon = Icon.resize((int(Icon.width * ratio), int(Icon.height * ratio)), Image.ANTIALIAS)
+    Icon = Icon.resize((int(Icon.width * ratio), int(Icon.height * ratio)), Image.ANTIALIAS).convert("RGBA")
     Middle = int((card.width - Icon.width) / 2)  # Get the middle of card and icon
     # Paste the image
     if (Category == "outfit") or (Category == "emote"):
