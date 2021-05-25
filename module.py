@@ -103,7 +103,7 @@ class Module:
         images = [data['images'][entry] for entry in data['images']]
         icon = images[0] if images else "https://i.imgur.com/JPuoAAu.png"
 
-        icon = Image.open(io.BytesIO(self.http.urlopen("GET", icon).data)).resize((512, 512), Image.ANTIALIAS)
+        icon = Image.open(io.BytesIO(self.http.urlopen("GET", icon).data)).resize((512*2, 512*2), Image.ANTIALIAS)
 
         if category in ('outfit', 'emote'):
             ratio = max(285 / icon.width, 365 / icon.height)
