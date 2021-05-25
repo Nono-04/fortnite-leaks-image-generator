@@ -150,7 +150,7 @@ async def check():
             round(math.sqrt(len(files)) + 0.45) * 305 - 5), int(round(math.sqrt(len(files)) + 0.45) * 550 - 5)),
             Image.ANTIALIAS))
 
-    # Your old way of merging images gave me aids, in a nice way.
+    # Your way of merging images gave me aids, in a nice way.
     # I honestly didnt know how it worked, and I kinda like that so I'm leaving it.
     # I added my image merged in module.py if you want to switch to it later.
 
